@@ -16,5 +16,7 @@ Se oblig-tekst for alle krav, og husk spesielt på følgende:
 
 Vi har brukt git til å dokumentere arbeidet vårt. Jeg har 16 commits totalt, og hver logg-melding beskriver det jeg har gjort av endringer.
 
+Jeg startet med å dele den opprinnelige kildekoden på Github som en repository.
+
 * Oppgave 1: Løste ved å implementere ...
 * Oppgave 2: ...
