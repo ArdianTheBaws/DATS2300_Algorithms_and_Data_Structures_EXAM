@@ -15,6 +15,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class EksamenTest {
 
+
+
+
     // OPPGAVE 1 ////////////////////////////////////////////////
     @org.junit.jupiter.api.Test
     void oppgave1() {
