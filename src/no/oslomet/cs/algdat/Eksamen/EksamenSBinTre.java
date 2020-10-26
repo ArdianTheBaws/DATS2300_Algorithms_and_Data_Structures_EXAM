@@ -83,7 +83,7 @@ public class EksamenSBinTre<T>{
         return antall == 0;
     }
 
-    public boolean leggInn(T verdi) {
+    public boolean leggInn(T verdi){ //https://www.cs.hioa.no/~ulfu/appolonius/kap5/2/kap52.html#5.2.3
             Objects.requireNonNull(verdi, "Ulovlig med nullverdier!");
 
             Node<T> p = rot, q = null;               // p starter i roten
@@ -118,9 +118,29 @@ public class EksamenSBinTre<T>{
         throw new UnsupportedOperationException("Ikke kodet ennå!");
     }
 
-    public int antall(T verdi) {
-        throw new UnsupportedOperationException("Ikke kodet ennå!");
+    public int antall(T verdi){ //Lignende oppggave fra 5.2.6. Hvor vi søker etter en verdi, og returnerer 0 ellers.
+                                //https://www.cs.hioa.no/~ulfu/appolonius/kap5/2/kap52.html#5.2.6
+        if (verdi == null)
+            return 0;
+
+
+        Node<T> p = rot;
+        int antallverdier = 0;
+
+        while (p != null)
+        {
+            int cmp = comp.compare(verdi, p.verdi);
+            if (cmp < 0) p = p.venstre;
+            else
+            {
+                if (cmp == 0) antallverdier++;
+                p = p.høyre;
+            }
+        }
+
+        return antallverdier;
     }
+
 
     public void nullstill() {
         throw new UnsupportedOperationException("Ikke kodet ennå!");
