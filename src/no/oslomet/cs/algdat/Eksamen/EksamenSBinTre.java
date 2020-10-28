@@ -161,9 +161,33 @@ public class EksamenSBinTre<T> {
         }
     }
 
-        private static <T> Node<T> nestePostorden(Node<T> p) {
-            throw new UnsupportedOperationException("Ikke kodet ennå!");
+        private static <T> Node<T> nestePostorden(Node<T> p) { //Kompendiet https://www.cs.hioa.no/~ulfu/appolonius/kap5/1/kap51.html#5.1.7
+                                                                //Kode fra forelsning: https://github.com/babrodtk/AlgDat2020/blob/master/src/MyBinaryTree.java
+
+            Node<T> node = p.forelder;
+
+
+            if (node == null) { //vi sjekker om parameteren p ikke er null. Returner ellers bare null.
+                return null;
+            }
+
+                if (node.høyre == p){ //høyre barn til forelder finnes
+                    return p.forelder;
+                }
+
+                else if(node.venstre == p ){ //venstre barn til forelder finnes
+                    if (node.høyre == null){
+                        return node;
+                    }
+
+
+                    else return førstePostorden(node.høyre);
+                }
+            return node;
+
     }
+
+
 
 
     public void postorden(Oppgave<? super T> oppgave) {
