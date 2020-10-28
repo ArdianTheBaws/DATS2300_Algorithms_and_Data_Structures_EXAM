@@ -172,7 +172,7 @@ public class EksamenSBinTre<T> {
             }
 
                 if (node.høyre == p){ //høyre barn til forelder finnes
-                    return p.forelder;
+                    return node;
                 }
 
                 else if(node.venstre == p ){ //venstre barn til forelder finnes
