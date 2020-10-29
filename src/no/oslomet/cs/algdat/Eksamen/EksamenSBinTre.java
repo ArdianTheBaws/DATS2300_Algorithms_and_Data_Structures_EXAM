@@ -205,8 +205,19 @@ public class EksamenSBinTre<T> {
         postordenRecursive(rot, oppgave);
     }
 
+
+    //hentet fra https://www.cs.hioa.no/~ulfu/appolonius/kap5/1/kap51.html#5.1.10
     private void postordenRecursive(Node<T> p, Oppgave<? super T> oppgave) {
-        throw new UnsupportedOperationException("Ikke kodet ennå!");
+        
+        Node<T> node = p;
+
+
+        if (node.venstre != null) postordenRecursive(node.venstre, oppgave); //besøker venstre node
+        if (node.høyre != null) postordenRecursive(node.høyre, oppgave); //besøker høyre node
+
+        oppgave.utførOppgave(node.verdi);//utfører oppgaven etter besøket, hvor i dette tilfeller er å skrive ut verdien
+
+
     }
 
     public ArrayList<T> serialize() {
