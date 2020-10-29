@@ -223,23 +223,30 @@ public class EksamenSBinTre<T> {
 
     //https://www.cs.hioa.no/~ulfu/appolonius/kap5/1/kap51.html#5.1.6 kopierte kildekoden
     public ArrayList<T> serialize() {
-        {
-            if (tom()) return;                   // tomt tre
 
-            Kø<Node<T>> kø = new TabellKø<>();   // Se Avsnitt 4.2.2
-            kø.leggInn(rot);                     // legger inn roten
+            if (tom()) return null;                   //tomt tre
 
-            while (!kø.tom())                    // så lenge som køen ikke er tom
-            {
-                Node<T> p = kø.taUt();             // tar ut fra køen
-                System.out.print(p.verdi + " ");   // skriver ut
+            ArrayList<Node<T>> kø = new ArrayList<>();  //lager en kø
 
-                if (p.venstre != null) kø.leggInn(p.venstre);
-                if (p.høyre != null) kø.leggInn(p.høyre);
+
+            ArrayList<T> ordnetListe = new ArrayList<>(); //ordnet arrayliste
+
+            kø.add(rot);                // legger inn roten
+
+        while (!kø.isEmpty()) { //kjør sålenge kø ikke er tom. isEmpty kan brukes siden statement er enten true or false
+
+            Node<T> temp = kø.remove(0);
+
+            if (temp != null) {
+
+                ordnetListe.add(temp.verdi); //fjernet verdi i kø legges i ordnet array
+                kø.add(temp.venstre);
+                kø.add(temp.høyre);
             }
         }
-    }
 
+        return (ArrayList<T>) ordnetListe;
+    }
 
 
 
