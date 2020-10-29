@@ -18,5 +18,7 @@ Vi har brukt git til å dokumentere arbeidet vårt. Jeg har 16 commits totalt, o
 
 Jeg startet med å dele den opprinnelige kildekoden på Github som en repository.
 
-* Oppgave 1: Løste ved å implementere ...
+* Oppgave 1: Denne oppgaven løste jeg ved å hente kode fra kompendiet (5.3.2). Her trengte jeg kun å endre én linje med
+kode som var å ta inn forelder q inn i parameteren p = new Node<>(verdi,q);
+
 * Oppgave 2: ...

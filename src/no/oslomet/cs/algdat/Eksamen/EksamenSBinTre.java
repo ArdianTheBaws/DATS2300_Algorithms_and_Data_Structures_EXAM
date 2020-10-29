@@ -127,6 +127,10 @@ public class EksamenSBinTre<T> {
         if (p.venstre == null || p.høyre == null)  // Tilfelle 1) og 2)
         {
             Node<T> b = p.venstre != null ? p.venstre : p.høyre;  // b for barn
+
+            if (b != null) b.forelder = q;  //sjekker om b ikke er NULL, hvis den ikke er det vil q være forelder til
+                                            //b
+
             if (p == rot) rot = b;
             else if (p == q.venstre) q.venstre = b;
             else q.høyre = b;
