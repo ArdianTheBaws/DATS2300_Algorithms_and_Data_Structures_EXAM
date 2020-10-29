@@ -164,26 +164,26 @@ public class EksamenSBinTre<T> {
         private static <T> Node<T> nestePostorden(Node<T> p) { //Kompendiet https://www.cs.hioa.no/~ulfu/appolonius/kap5/1/kap51.html#5.1.7
                                                                 //Kode fra forelsning: https://github.com/babrodtk/AlgDat2020/blob/master/src/MyBinaryTree.java
 
-            Node<T> node = p.forelder;
+            Node<T> forelderNode = p.forelder;
 
 
-            if (node == null) { //vi sjekker om parameteren p ikke er null. Returner ellers bare null.
+            if (forelderNode == null) { //vi sjekker om parameteren p ikke er null. Returner ellers bare null.
                 return null;
             }
 
-                if (node.høyre == p){ //høyre barn til forelder finnes
-                    return node;
+                if (forelderNode.høyre == p){ //høyre barn til forelder finnes
+                    return forelderNode;
                 }
 
-                else if(node.venstre == p ){ //venstre barn til forelder finnes
-                    if (node.høyre == null){
-                        return node;
+                else if(forelderNode.venstre == p ){ //venstre barn til forelder finnes
+                    if (forelderNode.høyre == null){ //og høyre barn er null
+                        return forelderNode;
                     }
 
 
-                    else return førstePostorden(node.høyre);
+                    else return førstePostorden(forelderNode.høyre);
                 }
-            return node;
+            return forelderNode;
 
     }
 
@@ -208,7 +208,7 @@ public class EksamenSBinTre<T> {
 
     //hentet fra https://www.cs.hioa.no/~ulfu/appolonius/kap5/1/kap51.html#5.1.10
     private void postordenRecursive(Node<T> p, Oppgave<? super T> oppgave) {
-        
+
         Node<T> node = p;
 
 
@@ -220,9 +220,28 @@ public class EksamenSBinTre<T> {
 
     }
 
+
+    //https://www.cs.hioa.no/~ulfu/appolonius/kap5/1/kap51.html#5.1.6 kopierte kildekoden
     public ArrayList<T> serialize() {
-        throw new UnsupportedOperationException("Ikke kodet ennå!");
+        {
+            if (tom()) return;                   // tomt tre
+
+            Kø<Node<T>> kø = new TabellKø<>();   // Se Avsnitt 4.2.2
+            kø.leggInn(rot);                     // legger inn roten
+
+            while (!kø.tom())                    // så lenge som køen ikke er tom
+            {
+                Node<T> p = kø.taUt();             // tar ut fra køen
+                System.out.print(p.verdi + " ");   // skriver ut
+
+                if (p.venstre != null) kø.leggInn(p.venstre);
+                if (p.høyre != null) kø.leggInn(p.høyre);
+            }
+        }
     }
+
+
+
 
     static <K> EksamenSBinTre<K> deserialize(ArrayList<K> data, Comparator<? super K> c) {
         throw new UnsupportedOperationException("Ikke kodet ennå!");
