@@ -108,7 +108,7 @@ public class EksamenSBinTre<T> {
         return true;                             // vellykket innlegging
     }
 
-
+    //http://www.cs.hioa.no/~ulfu/appolonius/kap5/2/kap52.html
     public boolean fjern(T verdi) {
         throw new UnsupportedOperationException("Ikke kodet ennå!");
     }
@@ -191,7 +191,14 @@ public class EksamenSBinTre<T> {
 
 
     public void postorden(Oppgave<? super T> oppgave) {
-        throw new UnsupportedOperationException("Ikke kodet ennå!");
+        Node<T> node = førstePostorden(rot);  //starter i første noden, altså roten
+
+
+
+        while (node != null) { //kjører løkke med tanke på at node ikke er "tom"
+            oppgave.utførOppgave(node.verdi); //skriver ut med hjelp fra interfacet i Oppgave.java
+            node = nestePostorden(node); //flytter
+        }
     }
 
     public void postordenRecursive(Oppgave<? super T> oppgave) {
