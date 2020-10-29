@@ -249,9 +249,11 @@ public class EksamenSBinTre<T> {
     }
 
 
-
+    //Kopierte rett fra https://www.cs.hioa.no/~ulfu/appolonius/kap5/2/kap52.html#5.2.3 og endra paths
     static <K> EksamenSBinTre<K> deserialize(ArrayList<K> data, Comparator<? super K> c) {
-        throw new UnsupportedOperationException("Ikke kodet ennå!");
+        EksamenSBinTre<K> tre = new EksamenSBinTre<>(c);             // komparatoren c
+        data.forEach(tre::leggInn);                       // bygger opp treet
+        return (EksamenSBinTre<K>) tre;                                    // treet returneres
     }
 
 
