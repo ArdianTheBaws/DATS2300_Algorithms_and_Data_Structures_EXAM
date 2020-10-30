@@ -186,10 +186,28 @@ public class EksamenSBinTre<T> {
         return antallverdier;
     }
 
-
-    public void nullstill() {
-        throw new UnsupportedOperationException("Ikke kodet ennå!");
+    //Kode for begge nullstill hentet fra: https://www.cs.hioa.no/~ulfu/appolonius/kap5/1/fasit517.html
+    public void nullstill()
+    {
+        if (!tom()) nullstill(rot);  // nullstiller
+        rot = null; antall = 0;      // treet er nå tomt
     }
+
+    private void nullstill(Node<T> p)
+    {
+        if (p.venstre != null)
+        {
+            nullstill(p.venstre);      // venstre subtre
+            p.venstre = null;          // nuller peker
+        }
+        if (p.høyre != null)
+        {
+            nullstill(p.høyre);        // høyre subtre
+            p.høyre = null;            // nuller peker
+        }
+        p.verdi = null;              // nuller verdien
+    }
+
 
     private static <T> Node<T> førstePostorden(Node<T> p) { //Koden er hentet fra
                                                 //https://www.cs.hioa.no/~ulfu/appolonius/kap5/1/kap51.html#kode.5.1.7.h
