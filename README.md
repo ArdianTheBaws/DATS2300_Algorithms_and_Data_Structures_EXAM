@@ -55,11 +55,11 @@ returnerte NULL hvis treet er tomt. Går gjennom en while-løkke så lenge noden
 For å lage deserialize metoden kopierte jeg bare Programkode 5.2.3 c) fra kompendiet. Vi oppretter et nytt tre ved å
 hente alle nodeverdiene gjennom data, og bruker leggInn metoden for å bygge det nye treet. Returnerer treet.
 
-* Oppgave 6: Denne oppgaven løste ved å kopiere ​Programkode​ 5.2 8 d) for å lage metoden fjern(T verdi). Det krevdes at
-det måtte gjøres endringer for at pekeren ​forelder​ får korrekt verdi i alle noder etter en fjerning.
+* Oppgave 6: Denne oppgaven løste jeg ved å kopiere ​Programkode​ 5.2 8 d) for å lage metoden fjern(T verdi). Det krevdes at
+det skulle gjøres endringer for at pekeren ​forelder​ får korrekt verdi i alle noder etter en fjerning.
 La til en if setning som gjorde q til forelder til b forutsett at b ikke er tom, slik fikk forelder korrekt verdi.
 Metoden fjernAlle(T verdi) skal fjerne alle noder som treet har og returnere antallet som ble fjernet. Da passet jeg 
-først på at treet ikke er tomt, eller returneres tallet 0. Så kjøres det en while-løkke av metoden fjenr(T verdi)
+først på at treet ikke var tomt, eller returneres tallet 0. Så kjøres det en while-løkke av metoden fjenr(T verdi)
 med en teller starterverdi 0. Returnerer antall. nullstill() metoden kopierte jeg fra kompendiets løsningsforslag
 (5.1.7). Vi sjekker først om treet ikke er tomt. nullstill(Node<T> p) kjører om treet ikke er tomt og nuller pekerne.
 Alle tester kjørte.
