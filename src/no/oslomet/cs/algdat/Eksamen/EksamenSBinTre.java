@@ -247,7 +247,7 @@ public class EksamenSBinTre<T> {
     }
 
 
-    //hentet fra https://www.cs.hioa.no/~ulfu/appolonius/kap5/1/kap51.html#5.1.10
+    //hentet fra https://www.cs.hioa.no/~ulfu/appolonius/kap5/1/kap51.html#figur.5.1.7.a
     private void postordenRecursive(Node<T> p, Oppgave<? super T> oppgave) {
 
         Node<T> node = p;
