@@ -131,8 +131,8 @@ public class EksamenSBinTre<T> {
 
         // p er nå null, dvs. ute av treet, q er den siste vi passerte
 
-        p = new Node<>(verdi, q);                   // oppretter en ny node. Siden q er forelder til p så da må ny
-
+        p = new Node<>(verdi, q);                   // oppretter en ny node. Siden q er forelder til p må
+                                                    // q være inni parameteren som forelder når p blir opprettet
 
         if (q == null) rot = p;                  // p blir rotnode
         else if (cmp < 0) q.venstre = p;         // venstre barn til q
