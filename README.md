@@ -46,8 +46,7 @@ representere postorden i en geometrisk regel skjønte jeg litt av tegninga. Bruk
 at man kunne gå rekursivt gjennom å besøke nodene. Her bruker jeg huskeregelen for postorden: venstre, høyre, node. 
 Her skal rotnoden alltid komme sist i arrayet. Traverserer i postordisk rekkefølge, besøker alle nodene i en bestemt 
 rekkefølge.
-                                                                                                  
-
+                                                                                                                                                                                             
 * Oppgave 5:
 
 * Oppgave 6:

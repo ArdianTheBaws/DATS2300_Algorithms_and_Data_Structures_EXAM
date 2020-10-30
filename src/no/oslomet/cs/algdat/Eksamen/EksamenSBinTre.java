@@ -155,7 +155,14 @@ public class EksamenSBinTre<T> {
     }
 
     public int fjernAlle(T verdi) {
-        throw new UnsupportedOperationException("Ikke kodet ennå!");
+        if (verdi == null) return 0;  // treet har ingen nullverdier
+
+        int antall = 0; //teller
+
+        while (fjern(verdi)){
+            antall++;
+        }
+        return antall;
     }
 
     public int antall(T verdi) { //Lignende oppggave fra 5.2.6. Hvor vi søker etter en verdi, og returnerer 0 ellers.
