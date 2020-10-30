@@ -27,14 +27,14 @@ Setter p som rot og bruker en while-løkke som starter fra toppen av treet, alts
 teller. Vi bruker en comparator til å finne om nodene skal til høyre eller venstre og går ut av løkkken for å
 returnere telleren når vi har ingen noder til venstre/høyre å gå til.
 
-* Oppgave 3: Denne oppgaven løste jeg først ved å lage hjelpemetoden førstePostorden. Brukte kode fra kompendiet 
+* Oppgave 3a: Denne oppgaven løste jeg først ved å lage hjelpemetoden førstePostorden. Brukte kode fra kompendiet 
 Programkode 5.1.7 h). Startet med å lage en infinite while-løkke med én if-, én if else og én else. Først sjekker
 vi i den første if setningen om vi kan gå rekursivt til venstre, hvis ikke vi kan gå til venstre hopper vi til neste
 if setningen og sjekker om vi kan gå til høyre. Hvis ingen av if setningen blir oppfylt går vi til siste if
 setning else, hvis det ikke er mulig å gå til venstre eller til høyre har vi nådd noden lengst nederst til venstre. Vi
 returner bare noden p, altså roten vi startet med.
 
-* Opprettet hjelpemetoden nestePostorden og starter først med å sjekke om forelderNoden er null, returner null 
+* Oppgave 3b: Opprettet hjelpemetoden nestePostorden og starter først med å sjekke om forelderNoden er null, returner null 
 hvis sann. Sjekker om høyre barn til forelder finnes, returnerer hvis true. Hvis ikke, sjekker vi om venstre barn til 
 forelder finnes og om høyre barn er tom. Returner noden som kommer i nestePostorden.
 
