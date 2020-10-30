@@ -19,13 +19,15 @@ Vi har brukt git til å dokumentere arbeidet vårt. Jeg har 16 commits totalt, o
 Jeg startet med å dele den opprinnelige kildekoden på Github som en repository.
 
 * Oppgave 1: Denne oppgaven løste jeg ved å hente kode fra kompendiet (5.3.2). Her trengte jeg kun å endre én linje med
-kode som var å ta inn forelder q inn i parameteren p = new Node<>(verdi,q);
+kode som var å ta inn forelder q inn i parameteren p = new Node<>(verdi,q); Alle tester kjørte.
+
 
 * Oppgave 2: Denne oppgaven løste ved hjelp av en lignende oppggave fra kompendiet (5.2.6). Vi søker etter en verdi, 
 og returnerer 0 ellers. Kopierte løsningen til oppgave 2 og endret variabler. Hvis arrayet er tom (NULL) returneres 0.
 Setter p som rot og bruker en while-løkke som starter fra toppen av treet, altså roten. Vi går da nedover treet og 
 teller. Vi bruker en comparator til å finne om nodene skal til høyre eller venstre og går ut av løkkken for å
-returnere telleren når vi har ingen noder til venstre/høyre å gå til.
+returnere telleren når vi har ingen noder til venstre/høyre å gå til. Alle tester kjørte.
+
 
 * Oppgave 3a: Denne oppgaven løste jeg først ved å lage hjelpemetoden førstePostorden. Brukte kode fra kompendiet 
 Programkode 5.1.7 h). Startet med å lage en infinite while-løkke med én if-, én if else og én else. Først sjekker
@@ -60,4 +62,5 @@ Metoden fjernAlle(T verdi) skal fjerne alle noder som treet har og returnere ant
 først på at treet ikke er tomt, eller returneres tallet 0. Så kjøres det en while-løkke av metoden fjenr(T verdi)
 med en teller starterverdi 0. Returnerer antall. nullstill() metoden kopierte jeg fra kompendiets løsningsforslag
 (5.1.7). Vi sjekker først om treet ikke er tomt. nullstill(Node<T> p) kjører om treet ikke er tomt og nuller pekerne.
+Alle tester kjørte.
                                                       
